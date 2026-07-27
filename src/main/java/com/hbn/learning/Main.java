@@ -13,19 +13,7 @@ public class Main {
 
 		Employee emp = new Employee( "Ansh", "male", 99000);
 
-//		Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-//		SessionFactory sessionFactory = cfg.buildSessionFactory();
-//		Session session = sessionFactory.openSession();
-//
-//		Transaction transaction = session.beginTransaction();
-//
-//		session.persist(emp);
-//		transaction.commit();
-		
-		
-		
-		
-		//or
+
 		
 		
 		
