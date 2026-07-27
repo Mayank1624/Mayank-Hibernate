@@ -33,7 +33,7 @@ public class Main {
 
 		Transaction transaction = session.beginTransaction();
 
-		session.persist(emp);
+	
 		transaction.commit();
 
 	}
