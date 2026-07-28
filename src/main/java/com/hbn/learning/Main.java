@@ -11,9 +11,13 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Employee emp = new Employee( "Ansh", "male", 99000);
+		Employee emp = new Employee( "Dilshad", "male", 79000);
 
-
+		
+		
+		
+		
+	
 		
 		
 		
@@ -28,3 +32,4 @@ public class Main {
 	}
 
 }
+
