@@ -11,15 +11,15 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Employee emp = new Employee( "Mukul", "male", 79000);
+		Employee emp = new Employee( "varun", "male", 79000);
 	
 		
 		Session session = HibernateConfig.getSessionFactory() .openSession();
 
 		Transaction transaction = session.beginTransaction();
 
-//		session.persist(emp);
-//		transaction.commit();
+		session.persist(emp);
+		transaction.commit();
 		
 		
 //		Employee employee = session.find(Employee.class, 5);
