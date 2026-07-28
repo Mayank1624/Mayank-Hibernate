@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity(name = "empp")
 public class Employee {
@@ -15,16 +16,20 @@ public class Employee {
 	private String name, gender;
 	private int salary;
 	
+	@Transient // jis variable ke upar ye annotation lag jati hai vo data base me store nhi hota hai
+	private String compNmae;
+	
 	public Employee() {
 		
 	}
 	
 	
-	public Employee( String name, String gender, int salary) {
+	public Employee( String name, String gender, int salary, String compName) {
 		super();
 		this.name = name;
 		this.gender = gender;
 		this.salary = salary;
+		this.compNmae=compNmae;
 	}
 
 

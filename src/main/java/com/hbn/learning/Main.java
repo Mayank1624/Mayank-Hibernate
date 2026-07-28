@@ -11,7 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Employee emp = new Employee( "Dilshad", "male", 79000);
+		Employee emp = new Employee( "Dilshad", "male", 79000, "HCL");
 
 		
 		
