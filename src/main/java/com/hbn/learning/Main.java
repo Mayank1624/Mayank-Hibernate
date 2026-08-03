@@ -15,81 +15,20 @@ public class Main {
 
 		Employee emp = new Employee( "Ansh", "male", 99000);
 		
-		
-		
-		
-		Session session = HibernateConfig.getSessionFactory() .openSession();
-
-		Transaction transaction = session.beginTransaction();
-		
-		//  jab sare record database se lana ho to ye query chalate hai
-		
-
-//		Query query = session.createQuery("from empp", Employee.class);
-//		List list = query.list();
-//		System.out.println(list);
-		
-		
-		// jar perticular kisi number se kise number ke record chahiye to ye method
-		
-		
-//		Query query = session.createQuery("from empp", Employee.class);
-//		query.setFirstResult(2);
-//		query.setMaxResults(4);
-//		List list = query.list();
-//		System.out.println(list);
-		
-		
-		
-		
-		
-		//  kisi bhi data ko upadte karne ke liye ye query chlayenge
-		
-//		MutationQuery query = session.createMutationQuery("update empp set name = :n, salary = :s where id = :i");
-//		
-//		query.setParameter("n","vinod" );
-//		query.setParameter("s", 4567437);
-//		query.setParameter("i","5" );
-//		query .executeUpdate();
-//		 transaction.commit();
-//		
-//		
-//		Query query1 = session.createQuery("from empp", Employee.class);
-//	   List list = query1.list();
-//	  System.out.println(list);
-		
-		
-		
-		
-	//  kisi record ko delete karne ke liye ye query chalayenge	
-		
-		
-		
-//		MutationQuery query = session.createMutationQuery("delete from empp where id = :i");
-//		query.setParameter("i",6 );
-//		query .executeUpdate();
-//		 transaction.commit();
-//		
-//		
-//		Query query1 = session.createQuery("from empp", Employee.class);
-//	   List list = query1.list();
-//	  System.out.println(list);
-		
-		
-		
-		
-		
-		//   sari data ka sum karne ke liye ye query chalayenge
-		
-//		Query query1 = session.createQuery("SELECT SUM(salary) from empp");
-//		  System.out.println(query1.list());
-		
-		
-		
-		
-		
-		Query query1 = session.createQuery("SELECT max(name) from empp");
-		  System.out.println(query1.list());
+	Session session = HibernateConfig.getSessionFactory().openSession();
+			Transaction transaction = session.beginTransaction();
+			Query<Employee>query = session.createNamedQuery("Employee.findEmployeeById",Employee.class);
+			query.setParameter("id","5");
+			List<Employee>employees = query.getResultList();
+			System.out.println(employees);
+			
+			System.out.println();
+			
+			Query<Employee> q = session.createNamedQuery("Employee.findByGender",Employee.class);
+			q.setParameter("gender", "male");
+			System.out.println(q.list());
+			//  tx.commit();
+			session.close();
 	  
 	 
 	
