@@ -23,6 +23,8 @@ public class Main {
 		
 	
 		
+		add1.setEmployee(emp);
+		
 	Session session = HibernateConfig.getSessionFactory().openSession();
 			Transaction transaction = session.beginTransaction();
 
@@ -37,6 +39,7 @@ public class Main {
 	
 	Address address = session.find(Address.class, 1);
 	System.out.println(address);
+	System.out.println(address.getEmployee());
 		
 		
 		
