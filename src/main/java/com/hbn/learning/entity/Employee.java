@@ -23,7 +23,7 @@ public class Employee {
 	private String name, gender;
 	private int salary;
 
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL , mappedBy = "employee")
     private List< Address> address;
 	
 	public Employee() {
@@ -79,8 +79,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary + ", address="
-				+ address + "]";
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary + "]";
 	}
 
 	
